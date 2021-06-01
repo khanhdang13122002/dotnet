@@ -4,6 +4,8 @@ using quanlysinhvien.DTO.UITest;
 using quanlysinhvien.DTO.UILoad;
 using quanlysinhvien.DTO.UILoad;
 using quanlysinhvien.DTO.UILoad;
+using System.Collections.Generic;
+
 namespace quanlysinhvien
 {
     static class Program
@@ -19,6 +21,7 @@ namespace quanlysinhvien
             Application.Run(new frmLogin());
 
         }
+       
 
     }
 

@@ -13,10 +13,10 @@ namespace quanlysinhvien.Models.EF
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class QuanLiSinhVienEntities4 : DbContext
+    public partial class QuanLiSinhVienEntities5 : DbContext
     {
-        public QuanLiSinhVienEntities4()
-            : base("name=QuanLiSinhVienEntities4")
+        public QuanLiSinhVienEntities5()
+            : base("name=QuanLiSinhVienEntities5")
         {
         }
     

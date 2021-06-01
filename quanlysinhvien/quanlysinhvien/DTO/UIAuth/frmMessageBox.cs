@@ -16,7 +16,7 @@ namespace quanlysinhvien.DTO.UIAuth
             Label lblNofication = new Label();
             lblNofication.Text = content;
             lblNofication.Font = new System.Drawing.Font("Segoe Print", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            lblNofication.Location = new System.Drawing.Point((this.Width - lblNofication.Width) / 2, (this.Height - lblNofication.Height) / 2);
+            lblNofication.Location = new Point((this.Width - lblNofication.Width) / 2, (this.Height - lblNofication.Height) / 2);
             lblNofication.ForeColor = Color.White;
             lblNofication.Width = this.Width;
             lblNofication.AutoSize = false;

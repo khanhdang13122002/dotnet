@@ -105,7 +105,7 @@ namespace quanlysinhvien.DTO.UIAccount
             this.btnAnalyics.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAnalyics.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(149)))));
             this.btnAnalyics.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalyics.Image")));
-            this.btnAnalyics.Location = new System.Drawing.Point(0, 212);
+            this.btnAnalyics.Location = new System.Drawing.Point(5, 212);
             this.btnAnalyics.Name = "btnAnalyics";
             this.btnAnalyics.Size = new System.Drawing.Size(189, 42);
             this.btnAnalyics.TabIndex = 3;
@@ -123,7 +123,7 @@ namespace quanlysinhvien.DTO.UIAccount
             this.btnCalender.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(149)))));
             this.btnCalender.Image = ((System.Drawing.Image)(resources.GetObject("btnCalender.Image")));
-            this.btnCalender.Location = new System.Drawing.Point(0, 260);
+            this.btnCalender.Location = new System.Drawing.Point(5, 260);
             this.btnCalender.Name = "btnCalender";
             this.btnCalender.Size = new System.Drawing.Size(189, 42);
             this.btnCalender.TabIndex = 4;
@@ -159,7 +159,7 @@ namespace quanlysinhvien.DTO.UIAccount
             this.btnDashBoard.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDashBoard.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(126)))), ((int)(((byte)(149)))));
             this.btnDashBoard.Image = ((System.Drawing.Image)(resources.GetObject("btnDashBoard.Image")));
-            this.btnDashBoard.Location = new System.Drawing.Point(0, 164);
+            this.btnDashBoard.Location = new System.Drawing.Point(2, 164);
             this.btnDashBoard.Name = "btnDashBoard";
             this.btnDashBoard.Size = new System.Drawing.Size(189, 42);
             this.btnDashBoard.TabIndex = 2;
@@ -184,6 +184,7 @@ namespace quanlysinhvien.DTO.UIAccount
             this.pnlContents.Name = "pnlContents";
             this.pnlContents.Size = new System.Drawing.Size(762, 577);
             this.pnlContents.TabIndex = 4;
+            this.pnlContents.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContents_Paint);
             // 
             // frmDashBroad
             // 

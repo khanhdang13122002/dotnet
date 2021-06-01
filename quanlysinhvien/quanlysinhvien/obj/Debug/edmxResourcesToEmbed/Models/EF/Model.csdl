@@ -107,6 +107,7 @@
     </Key>
     <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="ThaoTac" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ThoiGian" Type="DateTime" Precision="3" />
     <NavigationProperty Name="SinhVien" Relationship="Self.FK_LichSu_SinhVien" FromRole="LichSu" ToRole="SinhVien" />
   </EntityType>
   <EntityType Name="Lop">
@@ -143,19 +144,6 @@
     <Property Name="YKienPhanHoi" Type="String" MaxLength="1000" FixedLength="true" Unicode="true" />
     <NavigationProperty Name="SinhVien" Relationship="Self.FK_PhanHoiSinhVien_SinhVien" FromRole="PhanHoiSinhVien" ToRole="SinhVien" />
   </EntityType>
-  <EntityType Name="PhanQuyen">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
-    <Property Name="MatKhau" Type="String" MaxLength="32" FixedLength="true" Unicode="false" />
-    <Property Name="PDT" Type="Boolean" />
-    <Property Name="GV" Type="Boolean" />
-    <Property Name="SV" Type="Boolean" />
-    <Property Name="BU" Type="Boolean" />
-    <Property Name="RT" Type="Boolean" />
-    <Property Name="FULLC" Type="Boolean" />
-  </EntityType>
   <EntityType Name="SinhVien">
     <Key>
       <PropertyRef Name="MaSV" />
@@ -169,7 +157,7 @@
     <Property Name="EMail" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
     <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
     <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="Pic" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
     <NavigationProperty Name="Diem" Relationship="Self.FK_Diem_SinhVien" FromRole="SinhVien" ToRole="Diem" />
     <NavigationProperty Name="HanhKiem" Relationship="Self.FK_HanhKiem_SinhVien" FromRole="SinhVien" ToRole="HanhKiem" />
     <NavigationProperty Name="LichSu" Relationship="Self.FK_LichSu_SinhVien" FromRole="SinhVien" ToRole="LichSu" />
@@ -186,6 +174,14 @@
     <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="version" Type="Int32" />
     <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Tai_Khoan" Type="String" MaxLength="25" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="Mat_Khau" Type="String" MaxLength="16" FixedLength="true" Unicode="false" Nullable="false" />
   </EntityType>
   <Association Name="FK_BoMon_Khoa">
     <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
@@ -395,7 +391,7 @@
     <End Role="KhoaHoc" Type="Self.KhoaHoc" Multiplicity="*" />
     <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
   </Association>
-  <EntityContainer Name="QuanLiSinhVienEntities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="QuanLiSinhVienEntities5" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="BoMon" EntityType="Self.BoMon" />
     <EntitySet Name="ChuyenNganh" EntityType="Self.ChuyenNganh" />
     <EntitySet Name="Diem" EntityType="Self.Diem" />
@@ -408,9 +404,9 @@
     <EntitySet Name="Lop" EntityType="Self.Lop" />
     <EntitySet Name="MonHoc" EntityType="Self.MonHoc" />
     <EntitySet Name="PhanHoiSinhVien" EntityType="Self.PhanHoiSinhVien" />
-    <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" />
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="User" EntityType="Self.User" />
     <AssociationSet Name="FK_BoMon_Khoa" Association="Self.FK_BoMon_Khoa">
       <End Role="Khoa" EntitySet="Khoa" />
       <End Role="BoMon" EntitySet="BoMon" />

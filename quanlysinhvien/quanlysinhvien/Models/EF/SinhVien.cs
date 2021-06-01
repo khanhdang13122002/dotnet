@@ -32,7 +32,7 @@ namespace quanlysinhvien.Models.EF
         public string EMail { get; set; }
         public string SDT { get; set; }
         public string MaLop { get; set; }
-        public string Pic { get; set; }
+        public byte[] Pic { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Diem> Diem { get; set; }

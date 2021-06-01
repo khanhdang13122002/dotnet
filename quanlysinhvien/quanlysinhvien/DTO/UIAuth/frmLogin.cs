@@ -16,11 +16,6 @@ namespace quanlysinhvien
         {
             InitializeComponent();
         }
-        private void login_Load(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void lblCreated_Click(object sender, EventArgs e)
         {
@@ -42,13 +37,14 @@ namespace quanlysinhvien
         public void showLoading()
         {
             frmLoad loading = new frmLoad();
-            loading.tmerLoading.Interval = 10;
+            loading.tmerLoading.Interval =2;
             loading.ShowDialog();
         }
 
+       
         public void Login()
         {
-            
+           
             string user_ = txtUsername.Text.Trim();
             string pass_ = txtPassword.Text.Trim();
             if (user_ == "" || pass_ == "")
@@ -63,15 +59,12 @@ namespace quanlysinhvien
             else
             {
                 Thread thr = new Thread(showLoading);
-                thr.IsBackground = true;
                 thr.Start();
                 Authen Auth = new Authen();
                 bool Au = Auth.checkLogin(user_, pass_);
                 if (Au)
                 {
-
                     thr.Abort();
-
                     frmDashBroad dashbroad = new frmDashBroad(txtUsername.Text);
                     this.Hide();
                     dashbroad.Activate();
@@ -79,7 +72,6 @@ namespace quanlysinhvien
                 }
                 else
                 {
-
                     thr.Abort();
                     frmMessageBox msbLogin = new frmMessageBox();
                     msbLogin.Show_("Login failed");
@@ -88,6 +80,7 @@ namespace quanlysinhvien
                     this.txtUsername.Clear();
                     this.txtUsername.Focus();
                 }
+
             }
 
         }
@@ -98,11 +91,13 @@ namespace quanlysinhvien
 
         }
 
-       /* private async Task ImportAsync() {
+    /*    private async Task ImportAsync()
+        {
             UCLoading loading = new UCLoading();
             this.Controls.Add(loading);
             await Task.Run(() =>
             {
+                Login();
             });
             this.Controls.Remove(loading);
         }
@@ -110,6 +105,11 @@ namespace quanlysinhvien
         private void frmLogin_Shown(object sender, EventArgs e)
         {
             this.txtUsername.Focus();
+
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
 
         }
     }

@@ -41,6 +41,7 @@ namespace quanlysinhvien.DTO.UISinhVien
             this.dgvSinhVien.Name = "dgvSinhVien";
             this.dgvSinhVien.Size = new System.Drawing.Size(761, 439);
             this.dgvSinhVien.TabIndex = 0;
+            this.dgvSinhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSinhVien_CellContentClick);
             // 
             // UCSinhVien
             // 

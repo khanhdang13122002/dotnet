@@ -93,6 +93,7 @@
     </Key>
     <Property Name="ID" Type="char" MaxLength="10" Nullable="false" />
     <Property Name="ThaoTac" Type="nvarchar" MaxLength="50" />
+    <Property Name="ThoiGian" Type="datetime" />
   </EntityType>
   <EntityType Name="Lop">
     <Key>
@@ -121,19 +122,6 @@
     <Property Name="TinhTrang" Type="nchar" MaxLength="15" />
     <Property Name="YKienPhanHoi" Type="nchar" MaxLength="1000" />
   </EntityType>
-  <EntityType Name="PhanQuyen">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="MatKhau" Type="char" MaxLength="32" />
-    <Property Name="PDT" Type="bit" />
-    <Property Name="GV" Type="bit" />
-    <Property Name="SV" Type="bit" />
-    <Property Name="BU" Type="bit" />
-    <Property Name="RT" Type="bit" />
-    <Property Name="FULLC" Type="bit" />
-  </EntityType>
   <EntityType Name="SinhVien">
     <Key>
       <PropertyRef Name="MaSV" />
@@ -147,7 +135,7 @@
     <Property Name="EMail" Type="char" MaxLength="50" />
     <Property Name="SDT" Type="char" MaxLength="11" />
     <Property Name="MaLop" Type="char" MaxLength="10" />
-    <Property Name="Pic" Type="char" MaxLength="15" />
+    <Property Name="Pic" Type="image" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -158,6 +146,14 @@
     <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="version" Type="int" />
     <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Tai_Khoan" Type="char" MaxLength="25" Nullable="false" />
+    <Property Name="Mat_Khau" Type="char" MaxLength="16" Nullable="false" />
   </EntityType>
   <Association Name="FK_BoMon_Khoa">
     <End Role="Khoa" Type="Self.Khoa" Multiplicity="0..1" />
@@ -401,9 +397,9 @@
     <EntitySet Name="Lop" EntityType="Self.Lop" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MonHoc" EntityType="Self.MonHoc" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PhanHoiSinhVien" EntityType="Self.PhanHoiSinhVien" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="PhanQuyen" EntityType="Self.PhanQuyen" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="SinhVien" EntityType="Self.SinhVien" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_BoMon_Khoa" Association="Self.FK_BoMon_Khoa">
       <End Role="Khoa" EntitySet="Khoa" />
       <End Role="BoMon" EntitySet="BoMon" />

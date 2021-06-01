@@ -43,7 +43,7 @@ namespace quanlysinhvien.DTO.UIAuth
             this.btnSuccess.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSuccess.Font = new System.Drawing.Font("Segoe Print", 6F, System.Drawing.FontStyle.Bold);
             this.btnSuccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnSuccess.Location = new System.Drawing.Point(80, 92);
+            this.btnSuccess.Location = new System.Drawing.Point(129, 92);
             this.btnSuccess.Name = "btnSuccess";
             this.btnSuccess.Size = new System.Drawing.Size(75, 23);
             this.btnSuccess.TabIndex = 0;
@@ -57,7 +57,7 @@ namespace quanlysinhvien.DTO.UIAuth
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(229, 127);
+            this.ClientSize = new System.Drawing.Size(328, 127);
             this.ControlBox = false;
             this.Controls.Add(this.btnSuccess);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

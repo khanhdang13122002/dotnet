@@ -13,7 +13,12 @@ namespace quanlysinhvien.DTO.UISinhVien
         public void loadData()
         {
             SinhVienDAO sinhvien = new SinhVienDAO();
-            dgvSinhVien.DataSource = sinhvien.GetAll();
+           
+        }
+
+        private void dgvSinhVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -169,4 +169,42 @@
         2IFdf8fPOVEQ/AD976qNxJnfogAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="sinhVienBindingSource1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>690, 17</value>
+  </metadata>
+  <metadata name="quanLiSinhVienDataSet3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>517, 17</value>
+  </metadata>
+  <metadata name="quanLiSinhVienDataSet3.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>517, 17</value>
+  </metadata>
+  <metadata name="sinhVienBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>190, 17</value>
+  </metadata>
+  <metadata name="quanLiSinhVienDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="quanLiSinhVienDataSet2.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="sinhVienTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>356, 17</value>
+  </metadata>
+  <data name="btnRefresh.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6
+        JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAHdElNRQflBR0K
+        OgdWlO6vAAAAJXRFWHRkYXRlOmNyZWF0ZQAyMDIxLTA1LTI5VDEwOjU4OjA3KzAwOjAwFlEi3wAAACV0
+        RVh0ZGF0ZTptb2RpZnkAMjAyMS0wNS0yOVQxMDo1ODowNyswMDowMGcMmmMAAAFDSURBVDhPlZM9SgNR
+        FIWHQBIkSRu7WGYFadUYLVKIpZ1G3IgY0HUopHINSlADioKgVuICNBbGxnb8TuY4wziDJAc+mHfu3Af3
+        5wV5CsOwDGuwZ1ah5LDiF9DyMRFmDY7hC97gyrzDBA5hAV6g67RIGEvwDLfQhoJDihWgA3fwALowuYBD
+        FZR8CkXbGSkGQ5BSFxzBDeQm46s0/fMK33AG9d+gGqaa21MjR8QacALbULUdCUPdVsPimucSiftw6ePM
+        ImcLmvpowqb9mUXOCHo+zicSNdYxrNiKhKFxqlFqWMN2RsQ2QIsVbScfi6DRaEQalUaW7raFX4J76Nua
+        ml2QtCT/LZKSB/AEFdvxBVpPraluX4e/qyxPsUdIl4ehC/RA9FAO4BM+4NqoYaq5D9nSMFtw7qPO2vll
+        2IFdf8fPOVEQ/AD976qNxJnfogAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="sinhVienTableAdapter1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>862, 17</value>
+  </metadata>
 </root>

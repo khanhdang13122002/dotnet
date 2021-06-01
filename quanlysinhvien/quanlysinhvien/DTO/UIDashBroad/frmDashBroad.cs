@@ -115,6 +115,11 @@ namespace quanlysinhvien.DTO.UIAccount
             plnNav.Left = btnSettings.Left;
             plnNav.BackColor = Color.White;
         }
+
+        private void pnlContents_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 }

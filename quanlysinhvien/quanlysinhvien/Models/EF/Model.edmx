@@ -140,7 +140,7 @@
           <Property Name="EMail" Type="char" MaxLength="50" />
           <Property Name="SDT" Type="char" MaxLength="11" />
           <Property Name="MaLop" Type="char" MaxLength="10" />
-          <Property Name="Pic" Type="varchar" MaxLength="500" />
+          <Property Name="Pic" Type="image" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -644,7 +644,7 @@
           <Property Name="EMail" Type="String" MaxLength="50" FixedLength="true" Unicode="false" />
           <Property Name="SDT" Type="String" MaxLength="11" FixedLength="true" Unicode="false" />
           <Property Name="MaLop" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="Pic" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="Pic" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="Diem" Relationship="Self.FK_Diem_SinhVien" FromRole="SinhVien" ToRole="Diem" />
           <NavigationProperty Name="HanhKiem" Relationship="Self.FK_HanhKiem_SinhVien" FromRole="SinhVien" ToRole="HanhKiem" />
           <NavigationProperty Name="LichSu" Relationship="Self.FK_LichSu_SinhVien" FromRole="SinhVien" ToRole="LichSu" />
@@ -878,7 +878,7 @@
           <End Role="KhoaHoc" Type="Self.KhoaHoc" Multiplicity="*" />
           <End Role="SinhVien" Type="Self.SinhVien" Multiplicity="*" />
         </Association>
-        <EntityContainer Name="QuanLiSinhVienEntities4" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="QuanLiSinhVienEntities5" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BoMon" EntityType="Self.BoMon" />
           <EntitySet Name="ChuyenNganh" EntityType="Self.ChuyenNganh" />
           <EntitySet Name="Diem" EntityType="Self.Diem" />
@@ -972,7 +972,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="QuanLiSinhVienModelStoreContainer" CdmEntityContainer="QuanLiSinhVienEntities4">
+        <EntityContainerMapping StorageEntityContainer="QuanLiSinhVienModelStoreContainer" CdmEntityContainer="QuanLiSinhVienEntities5">
           <EntitySetMapping Name="BoMon">
             <EntityTypeMapping TypeName="QuanLiSinhVienModel.BoMon">
               <MappingFragment StoreEntitySet="BoMon">

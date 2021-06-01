@@ -29,12 +29,11 @@ namespace quanlysinhvien.DTO.UIAnalytics
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UCAnalytics));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lbltitle = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -43,7 +42,18 @@ namespace quanlysinhvien.DTO.UIAnalytics
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.dgvListSinhVien = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.sinhVienBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLiSinhVienDataSet3 = new quanlysinhvien.QuanLiSinhVienDataSet3();
+            this.sinhVienBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.quanLiSinhVienDataSet2 = new quanlysinhvien.QuanLiSinhVienDataSet2();
+            this.sinhVienTableAdapter = new quanlysinhvien.QuanLiSinhVienDataSet2TableAdapters.SinhVienTableAdapter();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.sinhVienTableAdapter1 = new quanlysinhvien.QuanLiSinhVienDataSet3TableAdapters.SinhVienTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSinhVien)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiSinhVienDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiSinhVienDataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // lbltitle
@@ -70,6 +80,7 @@ namespace quanlysinhvien.DTO.UIAnalytics
             this.txtSearch.TabIndex = 13;
             this.txtSearch.Text = "  Search for something...\r\n";
             this.txtSearch.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtSearch_MouseClick);
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             this.txtSearch.Leave += new System.EventHandler(this.txtSearch_Leave);
             // 
             // btnAdd
@@ -106,6 +117,7 @@ namespace quanlysinhvien.DTO.UIAnalytics
             this.btnInfor.Text = " Infor";
             this.btnInfor.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnInfor.UseVisualStyleBackColor = false;
+            this.btnInfor.Click += new System.EventHandler(this.btnInfor_Click);
             // 
             // btnDelete
             // 
@@ -116,13 +128,14 @@ namespace quanlysinhvien.DTO.UIAnalytics
             this.btnDelete.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
-            this.btnDelete.Location = new System.Drawing.Point(444, 118);
+            this.btnDelete.Location = new System.Drawing.Point(328, 118);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(90, 37);
             this.btnDelete.TabIndex = 17;
             this.btnDelete.Text = "Remove";
             this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -133,13 +146,14 @@ namespace quanlysinhvien.DTO.UIAnalytics
             this.btnUpdate.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnUpdate.Image")));
-            this.btnUpdate.Location = new System.Drawing.Point(235, 118);
+            this.btnUpdate.Location = new System.Drawing.Point(176, 118);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(90, 37);
             this.btnUpdate.TabIndex = 18;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnClose
             // 
@@ -159,93 +173,126 @@ namespace quanlysinhvien.DTO.UIAnalytics
             // 
             // dgvListSinhVien
             // 
-            this.dgvListSinhVien.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(6, 6, 0, 0);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListSinhVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListSinhVien.AllowUserToDeleteRows = false;
+            this.dgvListSinhVien.AllowUserToResizeColumns = false;
+            this.dgvListSinhVien.AllowUserToResizeRows = false;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
+            this.dgvListSinhVien.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvListSinhVien.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvListSinhVien.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvListSinhVien.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgvListSinhVien.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.dgvListSinhVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 8F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Teal;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListSinhVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListSinhVien.BackgroundColor = System.Drawing.Color.Black;
+            this.dgvListSinhVien.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvListSinhVien.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListSinhVien.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvListSinhVien.ColumnHeadersHeight = 40;
             this.dgvListSinhVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListSinhVien.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListSinhVien.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvListSinhVien.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvListSinhVien.EnableHeadersVisualStyles = false;
-            this.dgvListSinhVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.dgvListSinhVien.Location = new System.Drawing.Point(34, 172);
+            this.dgvListSinhVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvListSinhVien.Location = new System.Drawing.Point(34, 171);
             this.dgvListSinhVien.Name = "dgvListSinhVien";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.Transparent;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListSinhVien.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvListSinhVien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvListSinhVien.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvListSinhVien.RowTemplate.DividerHeight = 5;
-            this.dgvListSinhVien.RowTemplate.Height = 40;
-            this.dgvListSinhVien.RowTemplate.ReadOnly = true;
-            this.dgvListSinhVien.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListSinhVien.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.dgvListSinhVien.ReadOnly = true;
+            this.dgvListSinhVien.RowHeadersVisible = false;
+            this.dgvListSinhVien.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvListSinhVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvListSinhVien.Size = new System.Drawing.Size(696, 359);
-            this.dgvListSinhVien.TabIndex = 31;
+            this.dgvListSinhVien.TabIndex = 29;
             this.dgvListSinhVien.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Dark;
             this.dgvListSinhVien.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(48)))), ((int)(((byte)(52)))));
             this.dgvListSinhVien.ThemeStyle.AlternatingRowsStyle.Font = null;
             this.dgvListSinhVien.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.dgvListSinhVien.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.dgvListSinhVien.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvListSinhVien.ThemeStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.dgvListSinhVien.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(56)))), ((int)(((byte)(62)))));
-            this.dgvListSinhVien.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(16)))), ((int)(((byte)(18)))));
-            this.dgvListSinhVien.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvListSinhVien.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 8F);
+            this.dgvListSinhVien.ThemeStyle.BackColor = System.Drawing.Color.Black;
+            this.dgvListSinhVien.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.dgvListSinhVien.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.Transparent;
+            this.dgvListSinhVien.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dgvListSinhVien.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
             this.dgvListSinhVien.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
             this.dgvListSinhVien.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvListSinhVien.ThemeStyle.HeaderStyle.Height = 40;
-            this.dgvListSinhVien.ThemeStyle.ReadOnly = false;
+            this.dgvListSinhVien.ThemeStyle.ReadOnly = true;
             this.dgvListSinhVien.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(41)))));
-            this.dgvListSinhVien.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvListSinhVien.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.dgvListSinhVien.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Single;
+            this.dgvListSinhVien.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Candara", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.dgvListSinhVien.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvListSinhVien.ThemeStyle.RowsStyle.Height = 40;
+            this.dgvListSinhVien.ThemeStyle.RowsStyle.Height = 22;
             this.dgvListSinhVien.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(117)))), ((int)(((byte)(119)))));
             this.dgvListSinhVien.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvListSinhVien.DataMemberChanged += new System.EventHandler(this.dgvListSinhVien_DataMemberChanged);
+            this.dgvListSinhVien.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListSinhVien_CellContentClick_2);
+            this.dgvListSinhVien.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListSinhVien_CellContentDoubleClick);
+            // 
+            // sinhVienBindingSource1
+            // 
+            this.sinhVienBindingSource1.DataMember = "SinhVien";
+            this.sinhVienBindingSource1.DataSource = this.quanLiSinhVienDataSet3;
+            // 
+            // quanLiSinhVienDataSet3
+            // 
+            this.quanLiSinhVienDataSet3.DataSetName = "QuanLiSinhVienDataSet3";
+            this.quanLiSinhVienDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sinhVienBindingSource
+            // 
+            this.sinhVienBindingSource.DataMember = "SinhVien";
+            this.sinhVienBindingSource.DataSource = this.quanLiSinhVienDataSet2;
+            // 
+            // quanLiSinhVienDataSet2
+            // 
+            this.quanLiSinhVienDataSet2.DataSetName = "QuanLiSinhVienDataSet2";
+            this.quanLiSinhVienDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sinhVienTableAdapter
+            // 
+            this.sinhVienTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe Print", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.Location = new System.Drawing.Point(492, 118);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(90, 37);
+            this.btnRefresh.TabIndex = 30;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // sinhVienTableAdapter1
+            // 
+            this.sinhVienTableAdapter1.ClearBeforeFill = true;
             // 
             // UCAnalytics
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.dgvListSinhVien);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnInfor);
@@ -258,6 +305,10 @@ namespace quanlysinhvien.DTO.UIAnalytics
             this.Size = new System.Drawing.Size(760, 553);
             this.Load += new System.EventHandler(this.UCAnalytics_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListSinhVien)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiSinhVienDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sinhVienBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quanLiSinhVienDataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,6 +322,13 @@ namespace quanlysinhvien.DTO.UIAnalytics
         public System.Windows.Forms.Button btnDelete;
         public System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnClose;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvListSinhVien;
+        private System.Windows.Forms.BindingSource sinhVienBindingSource;
+        private QuanLiSinhVienDataSet2 quanLiSinhVienDataSet2;
+        private QuanLiSinhVienDataSet2TableAdapters.SinhVienTableAdapter sinhVienTableAdapter;
+        public Guna.UI2.WinForms.Guna2DataGridView dgvListSinhVien;
+        public System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.BindingSource sinhVienBindingSource1;
+        private QuanLiSinhVienDataSet3 quanLiSinhVienDataSet3;
+        private QuanLiSinhVienDataSet3TableAdapters.SinhVienTableAdapter sinhVienTableAdapter1;
     }
 }

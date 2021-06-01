@@ -29,12 +29,21 @@ namespace quanlysinhvien.DTO.UIMannager
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnClose = new System.Windows.Forms.Button();
             this.pnlMannagerContent = new System.Windows.Forms.Panel();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // 
+            // pnlMannagerContent
+            // 
+            this.pnlMannagerContent.BackColor = System.Drawing.Color.Black;
+            this.pnlMannagerContent.Location = new System.Drawing.Point(45, 43);
+            this.pnlMannagerContent.Name = "pnlMannagerContent";
+            this.pnlMannagerContent.Size = new System.Drawing.Size(627, 437);
+            this.pnlMannagerContent.TabIndex = 30;
             // 
             // btnClose
             // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -44,37 +53,31 @@ namespace quanlysinhvien.DTO.UIMannager
             this.btnClose.Location = new System.Drawing.Point(678, 12);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(25, 25);
-            this.btnClose.TabIndex = 29;
+            this.btnClose.TabIndex = 31;
             this.btnClose.Text = "X";
             this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // pnlMannagerContent
-            // 
-            this.pnlMannagerContent.Location = new System.Drawing.Point(45, 43);
-            this.pnlMannagerContent.Name = "pnlMannagerContent";
-            this.pnlMannagerContent.Size = new System.Drawing.Size(627, 437);
-            this.pnlMannagerContent.TabIndex = 30;
+            this.btnClose.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(715, 517);
-            this.Controls.Add(this.pnlMannagerContent);
             this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.pnlMannagerContent);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmManager";
             this.Load += new System.EventHandler(this.frmManager_Load);
+            this.Enter += new System.EventHandler(this.frmManager_Enter);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Panel pnlMannagerContent;
+        private System.Windows.Forms.Button btnClose;
     }
 }

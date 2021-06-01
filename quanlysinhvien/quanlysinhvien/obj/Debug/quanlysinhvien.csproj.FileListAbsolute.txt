@@ -29,3 +29,5 @@ C:\IT\dot_net\winform\projects\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysin
 C:\IT\dot_net\winform\projects\quanlysinhvien\quanlysinhvien\bin\Debug\Guna.UI2.dll
 C:\IT\dot_net\winform\projects\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.DTO.UIMannager.frmManager.resources
 C:\IT\dot_net\winform\projects\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.DTO.UIMannager.UCAdd.resources
+C:\IT\dot_net\winform\projects\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.DTO.UIMannager.UCUpdate.resources
+C:\IT\dot_net\winform\projects\quanlysinhvien\quanlysinhvien\obj\Debug\quanlysinhvien.DTO.UIMannager.UCInfor.resources

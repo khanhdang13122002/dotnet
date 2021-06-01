@@ -30,6 +30,7 @@ namespace quanlysinhvien.DTO.UITest
         private void InitializeComponent()
         {
             this.dgvTest = new System.Windows.Forms.DataGridView();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTest)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,10 +43,24 @@ namespace quanlysinhvien.DTO.UITest
             this.dgvTest.TabIndex = 0;
             this.dgvTest.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTest_CellContentClick);
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "sacas",
+            "ascsc",
+            "ascacs",
+            "asc"});
+            this.comboBox1.Location = new System.Drawing.Point(108, 139);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
+            this.comboBox1.TabIndex = 1;
+            // 
             // UCTest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dgvTest);
             this.Name = "UCTest";
             this.Size = new System.Drawing.Size(487, 332);
@@ -57,5 +72,6 @@ namespace quanlysinhvien.DTO.UITest
         #endregion
 
         private System.Windows.Forms.DataGridView dgvTest;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

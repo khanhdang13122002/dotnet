@@ -24,7 +24,11 @@ namespace quanlysinhvien.DTO.UITest
 
         private void dgvTest_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+            SinhVienDAO svDao = new SinhVienDAO();
+            foreach(var item in svDao.GetMaLop())
+            {
+                comboBox1.Items[0] = item.MaLop;
+            }
         }
         public void loadData()
         {

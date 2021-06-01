@@ -12,27 +12,41 @@ namespace quanlysinhvien.DTO.UIMannager
 {
     public partial class frmManager : Form
     {
-        public frmManager()
+        public frmManager(Control contr)
         {
             InitializeComponent();
+            addControl(contr);
         }
-
-        public string create(string controlName)
-        {
-          return "UC" + controlName + " " + "uc" + controlName+" = "+"new"+" "+"UC"+controlName+"()"+";";
-        }
+        
         public void addControl(Control control)
         {
-            pnlMannagerContent.Controls.Add(control);
+            pnlMannagerContent.Controls.Clear();
+;           pnlMannagerContent.Controls.Add(control);
         }
-        private void btnClose_Click(object sender, EventArgs e)
+         
+        private void frmManager_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void frmManager_Load(object sender, EventArgs e)
+        private void frmManager_Enter(object sender, EventArgs e)
+        {
+            this.Focus();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

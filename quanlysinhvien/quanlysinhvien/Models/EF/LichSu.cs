@@ -16,6 +16,7 @@ namespace quanlysinhvien.Models.EF
     {
         public string ID { get; set; }
         public string ThaoTac { get; set; }
+        public Nullable<System.DateTime> ThoiGian { get; set; }
     
         public virtual SinhVien SinhVien { get; set; }
     }
